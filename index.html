@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+TypingpingDOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,44 +7,11 @@
   <link rel="stylesheet" href="style.css" />
   <title>Team Astra Website</title>
 
-  <!-- Background Music -->
+</head>
+<body>
   <audio autoplay loop hidden>
     <source src="music.mp3" type="audio/mpeg" />
   </audio>
-
-  <!-- Typing Animation Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const typingElement = document.querySelector(".typing-text span");
-      const words = ["Professional Hacker", "Tool Developer", "Bug Hunter", "Penetration Tester"];
-      let wordIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-
-      function typeEffect() {
-        const currentWord = words[wordIndex];
-        const currentText = currentWord.substring(0, charIndex);
-        typingElement.textContent = currentText;
-
-        if (!isDeleting && charIndex < currentWord.length) {
-          charIndex++;
-          setTimeout(typeEffect, 100);
-        } else if (isDeleting && charIndex > 0) {
-          charIndex--;
-          setTimeout(typeEffect, 60);
-        } else {
-          isDeleting = !isDeleting;
-          if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-          setTimeout(typeEffect, 1000);
-        }
-      }
-
-      typeEffect();
-    });
-  </script>
-</head>
-<body>
-
   <header>
     <a href="#" class="logo">TEAM ASTRA</a>
     <nav>
@@ -80,4 +47,5 @@
 
 </body>
 </html>
+
 
