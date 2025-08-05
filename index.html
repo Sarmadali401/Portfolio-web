@@ -1,89 +1,82 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-    
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Team Astra Website</title>
 
-    <meta charset="UTF-8">
+  <!-- Background Music -->
+  <audio autoplay loop hidden>
+    <source src="Pusu.mp3" type="audio/mpeg" />
+  </audio>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Typing Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const typingElement = document.querySelector(".typing-text span");
+      const words = ["Professional Hacker", "Tool Developer", "Bug Hunter", "Penetration Tester"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+        const currentText = currentWord.substring(0, charIndex);
+        typingElement.textContent = currentText;
 
-    <link rel="stylesheet" href="style.css">
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(typeEffect, 60);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeEffect, 1000);
+        }
+      }
 
-    <title>Team astraWebsite</title>
-
+      typeEffect();
+    });
+  </script>
 </head>
-
 <body>
 
-  <audio autoplay loop hidden>
-  <source src="music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <header>
+    <a href="#" class="logo">TEAM ASTRA</a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Skills</a>
+      <a href="#">Education</a>
+      <a href="#">Experience</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-    <header>
+  <section class="home">
+    <div class="home-img">
+      <img src="main.jpg" alt="" />
+    </div>
 
-        <a href="#" class="logo">TEAM ASTRA</a>
+    <div class="home-content">
+      <h1>Hi, It's <span>Astra Hacker</span></h1>
+      <h3 class="typing-text">I'm a <span></span></h3>
+      <p>Hello, I am Astra Hacker and I am a professional hacker with 5 years of experience in the hacking field. I can do everything related to the internet world because we are the kings of the internet. I also sell hacking tools like FB hack, WhatsApp hack, Instagram hack, mobile hack, etc.</p>
 
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
 
-
-        <nav>
-
-            <a href="#" class="active"> Home</a>
-
-            <a href="#" >Services</a>
-
-            <a href="#" >Skills</a>
-
-            <a href="#" >Education</a>
-
-            <a href="#" >Experience</a>
-
-            <a href="#" >Contact</a>
-
-        </nav>
-
-    </header>
-
-    <section class="home">
-
-        <div class="home-img">
-
-            <img src="main.jpg" alt="">
-
-        </div>
-
-        <div class="home-content">
-
-            <h1>Hi, It's <span>Astra Hacker</span></h1>
-
-            <h3 class="typing-text">I'm a <span></span></h3>
-
-            <p>Hello iam Astra Hacker and iam professional Hacker i have 5 years Experiencein in Hacking field I can do everything with related internet world because we are kings of internet world and Iam A seller of Hacking Tools like fb hack w.a hack insta hack mobile hack. etc.</p>
-
-            <div class="social-icons">
-
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-            </div>
-
-            <a href="https://www.google.com" class="btn">Hire me</a>
-
-        </div>
-
-    </section>
+      <a href="https://www.google.com" class="btn">Hire me</a>
+    </div>
+  </section>
 
 </body>
-
-
 </html>
